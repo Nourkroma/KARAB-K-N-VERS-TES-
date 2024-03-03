@@ -78,7 +78,7 @@ public class Student {
     private PdfDocument student_grades;
 
     // IF WE USE THE CODE
-    private String secret_code;
+    private String secret;
 
     private String certificateName;
 

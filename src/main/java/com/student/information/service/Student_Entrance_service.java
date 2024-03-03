@@ -9,6 +9,7 @@ import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 
 import com.student.information.dto.Student;
+import com.student.information.dto.StudentRequest;
 import com.student.information.dto.StudentResponse;
 import com.student.information.repo.Student_Repo;
 
@@ -18,7 +19,7 @@ public class Student_Entrance_service {
     @Autowired
     private Student_Repo student_repo;
 
-    public ResponseEntity<StudentResponse> getStudentData(Student s) {
+    public ResponseEntity<StudentResponse> getStudentData(StudentRequest s) {
         String email = s.getEmail();
         String password = s.getPassword();
         Optional<Student> student = student_repo.findByEmailAndPassword(email, password);
