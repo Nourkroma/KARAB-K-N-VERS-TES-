@@ -22,8 +22,9 @@ public class Student_Entrance_controller {
     private Student_Entrance_service student_entrance_service;
 
     @GetMapping("/fulldata")
-    public ResponseEntity<StudentResponse> getStudentData(@RequestParam String id) {
-        return student_entrance_service.getStudentData(id);
+    public ResponseEntity<StudentResponse> getStudentData(@RequestParam Student s) {
+        return student_entrance_service.getStudentData(s);
     }
+
 
 }

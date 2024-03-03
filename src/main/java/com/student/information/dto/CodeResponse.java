@@ -15,5 +15,4 @@ public class CodeResponse {
 
     private String description;
 
-    private String bottomText;
 }

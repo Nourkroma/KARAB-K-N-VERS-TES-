@@ -18,8 +18,10 @@ public class Student_Entrance_service {
     @Autowired
     private Student_Repo student_repo;
 
-    public ResponseEntity<StudentResponse> getStudentData(String id) {
-        Optional<Student> student = student_repo.findById(id);
+    public ResponseEntity<StudentResponse> getStudentData(Student s) {
+        String email = s.getEmail();
+        String password = s.getPassword();
+        Optional<Student> student = student_repo.findByEmailAndPassword(email, password);
         
         if (student.isPresent()) {
             Student student1 = student.get();

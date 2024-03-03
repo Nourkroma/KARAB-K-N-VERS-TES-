@@ -14,5 +14,5 @@ public interface Student_Repo extends MongoRepository <Student, String>{
     Optional<Student> findById(String id);
     Optional<Student> findByEmail(String email);
     Optional<Student> findByName(String name);
-
+    Optional<Student> findByEmailAndPassword(String email, String password);
 }

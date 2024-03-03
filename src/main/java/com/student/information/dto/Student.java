@@ -90,5 +90,4 @@ public class Student {
 
     private String description;
 
-    private String bottomText;
 }
