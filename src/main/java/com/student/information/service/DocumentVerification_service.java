@@ -14,14 +14,14 @@ public class DocumentVerification_service {
     @Autowired
     private Student_Repo student_repo;
 
-    public ResponseEntity<CodeResponse> getDocument(String secret_code) {
-        if (secret_code == null)
+    public ResponseEntity<CodeResponse> getDocument(String secret) {
+        if (secret == null)
             return ResponseEntity.badRequest().build();
 
-        if (!student_repo.findBySecret(secret_code).isPresent())
+        if (!student_repo.findBySecret(secret).isPresent())
             return ResponseEntity.badRequest().build();
 
-        Optional<Student> student = student_repo.findBySecret(secret_code);
+        Optional<Student> student = student_repo.findBySecret(secret);
         CodeResponse codeResponse = codeResponseBuild(student.get());
 
         return ResponseEntity.ok(codeResponse);

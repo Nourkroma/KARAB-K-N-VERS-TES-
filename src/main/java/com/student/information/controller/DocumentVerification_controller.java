@@ -21,7 +21,7 @@ public class DocumentVerification_controller {
 
 
     @GetMapping("/document")
-    public ResponseEntity<CodeResponse> getDocument(@RequestParam String secret_code) {
-        return documentVerification_service.getDocument(secret_code);
+    public ResponseEntity<CodeResponse> getDocument(@RequestParam String secret) {
+        return documentVerification_service.getDocument(secret);
     }
 }
