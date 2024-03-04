@@ -11,6 +11,8 @@ import org.springframework.web.bind.annotation.RestController;
 import com.student.information.dto.Student;
 import com.student.information.service.Admin_service;
 
+import jakarta.validation.Valid;
+
 @RestController
 @RequestMapping("/admin")
 @CrossOrigin(origins = "*")
@@ -20,7 +22,7 @@ public class AdminView {
     private Admin_service admin_service;
 
     @PostMapping("/newstudent")
-    public ResponseEntity<String> addStudent(@RequestBody Student student) {
+    public ResponseEntity<String> addStudent(@RequestBody  @Valid Student student) {
         return admin_service.addStudent(student);
     }
 }
