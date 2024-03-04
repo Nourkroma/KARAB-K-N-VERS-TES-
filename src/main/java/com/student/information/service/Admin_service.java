@@ -16,13 +16,13 @@ public class Admin_service {
     public ResponseEntity<String> addStudent(Student student) {
 
         if ((student.getEmail() == null || student.getPassword() == null) && (student.getSecret() == null))
-            return ResponseEntity.badRequest().body("Email, Password and Secret are required");
+            return ResponseEntity.badRequest().body("Email, Password and Secret are required fields");
 
-        if (student_repo.findByEmail(student.getEmail()) != null)
-            return ResponseEntity.badRequest().body("Email already exists");
+        // if (student_repo.findByEmail(student.getEmail()) != null)
+        //     return ResponseEntity.badRequest().body("Email already exists in database");
 
-        if (student_repo.findBySecret(student.getSecret()) != null)
-            return ResponseEntity.badRequest().body("Secret already exists");
+        // if (student_repo.findBySecret(student.getSecret()) != null)
+        //     return ResponseEntity.badRequest().body("Secret already exists");
 
         student_repo.save(student).getId();
         return ResponseEntity.ok("Student added successfully");
