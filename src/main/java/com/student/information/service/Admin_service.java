@@ -14,16 +14,19 @@ public class Admin_service {
     private Student_Repo student_repo;
 
     public ResponseEntity<String> addStudent(Student student) {
-        
-        if (student != null)
-        {
-            student_repo.save(student).getId();
-            return ResponseEntity.ok("Student added successfully");
-        }
-            
-        else
-            return ResponseEntity.badRequest().build();
-    }
 
+        if ((student.getEmail() == null || student.getPassword() == null) && (student.getSecret() == null))
+            return ResponseEntity.badRequest().build();
+
+        if (student_repo.findByEmail(student.getEmail()) != null)
+            return ResponseEntity.badRequest().build();
+
+        if (student_repo.findBySecret(student.getSecret()) != null)
+            return ResponseEntity.badRequest().build();
+
+        student_repo.save(student).getId();
+        return ResponseEntity.ok("Student added successfully");
+
+    }
 
 }
