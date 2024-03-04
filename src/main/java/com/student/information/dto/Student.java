@@ -9,7 +9,7 @@ import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 @Data
-@Document(collection = "student")
+@Document(collection = "students")
 public class Student {
 
     @Id
