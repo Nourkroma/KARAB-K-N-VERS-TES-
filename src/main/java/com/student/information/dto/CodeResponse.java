@@ -15,6 +15,9 @@ public class CodeResponse {
 
     private String description;
 
+    private String studentId;
+
+    private String name;
 }
 
 // add studentid , add name 

@@ -33,7 +33,7 @@ public class AdminView {
 
     @PostMapping("/newstudent")
     public ResponseEntity<String> addStudent(@RequestBody @Valid Student student) {
-        System.out.println(student);
+        // System.out.println(student);
         return admin_service.addStudent(student);
     }
 
@@ -49,18 +49,17 @@ public class AdminView {
             @RequestParam("study_plan") MultipartFile file2, @RequestParam("student_grades") MultipartFile file3,
             @RequestParam("email") String email) throws IOException {
 
-            if (file != null)
-                pdfService.compressAndSavePDF(file.getBytes(), file.getName(), email);
-            if (file2 != null)
-                pdfService.compressAndSavePDF(file2.getBytes(), file2.getName(), email);
-            if (file3 != null)
-                pdfService.compressAndSavePDF(file3.getBytes(), file3.getName(), email);
+        if (file != null)
+            pdfService.compressAndSavePDF(file.getBytes(), file.getName(), email);
+        if (file2 != null)
+            pdfService.compressAndSavePDF(file2.getBytes(), file2.getName(), email);
+        if (file3 != null)
+            pdfService.compressAndSavePDF(file3.getBytes(), file3.getName(), email);
 
-            if (file == null && file2 == null && file3 == null)
-                return "No file uploaded";
-            else
-                return "File uploaded successfully";
-            
-            
+        if (file == null && file2 == null && file3 == null)
+            return "No file uploaded";
+        else
+            return "File uploaded successfully";
+
     }
 }

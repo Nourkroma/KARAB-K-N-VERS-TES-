@@ -57,6 +57,8 @@ public class Student {
     
     private String situation;
 
+    private String studentId;
+
     private String state;
 
     private String passport_no;

@@ -34,7 +34,8 @@ public class DocumentVerification_service {
         codeResponse.setAverageScore(student.getAverageScore());
         codeResponse.setEducation(student.getEducation());
         codeResponse.setDescription(student.getDescription());
-
+        codeResponse.setName(student.getName());
+        codeResponse.setStudentId(student.getStudentId());
         return codeResponse;
     }
 

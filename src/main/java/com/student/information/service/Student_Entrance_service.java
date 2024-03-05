@@ -87,6 +87,7 @@ public class Student_Entrance_service {
         response.setEducation(student.getEducation());
         response.setDescription(student.getDescription());
         response.setState(student.getState());
+        response.setStudentId(student.getStudentId());
         return response;
     }
 
