@@ -86,7 +86,7 @@ public class Student_Entrance_service {
         response.setAverageScore(student.getAverageScore());
         response.setEducation(student.getEducation());
         response.setDescription(student.getDescription());
-
+        response.setState(student.getState());
         return response;
     }
 

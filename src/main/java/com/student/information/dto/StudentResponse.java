@@ -58,6 +58,8 @@ public class StudentResponse {
 
     private String email;
 
+    private String state;
+
     // IF WE USE THE CODE
     private String secret;
 

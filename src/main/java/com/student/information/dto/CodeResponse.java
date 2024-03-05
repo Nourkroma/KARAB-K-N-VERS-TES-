@@ -4,7 +4,7 @@ import lombok.Data;
 
 @Data
 public class CodeResponse {
-    
+
     private String certificateName;
 
     private String certificateNumber;
@@ -16,3 +16,5 @@ public class CodeResponse {
     private String description;
 
 }
+
+// add studentid , add name 
