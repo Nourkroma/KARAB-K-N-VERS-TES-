@@ -65,7 +65,7 @@ public class Student {
 
     private String last_session_date;
 
-    private String image;
+    private ImageData image;
 
     private String duration_of_study;
 

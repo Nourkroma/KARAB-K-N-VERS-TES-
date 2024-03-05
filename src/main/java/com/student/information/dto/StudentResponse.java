@@ -37,7 +37,7 @@ public class StudentResponse {
 
     private String last_session_date;
 
-    private String image;
+    private byte[] image;
 
     private String duration_of_study;
 
