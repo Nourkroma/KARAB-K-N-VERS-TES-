@@ -47,9 +47,8 @@ public class AdminView {
     @PostMapping("/upload")
     public String uploadPDF(@RequestParam("full_information") MultipartFile file,
             @RequestParam("study_plan") MultipartFile file2, @RequestParam("student_grades") MultipartFile file3,
-            @RequestParam("email") String email) {
+            @RequestParam("email") String email) throws IOException {
 
-        try {
             if (file != null)
                 pdfService.compressAndSavePDF(file.getBytes(), file.getName(), email);
             if (file2 != null)
@@ -61,9 +60,7 @@ public class AdminView {
                 return "No file uploaded";
             else
                 return "File uploaded successfully";
-        } catch (IOException e) {
-            e.printStackTrace();
-            return "Failed to upload file";
-        }
+            
+            
     }
 }
