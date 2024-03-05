@@ -22,15 +22,14 @@ public class Student_Entrance_service {
     @Autowired
     private StorageService storageService;
 
-    public ResponseEntity<StudentResponse> getStudentData(StudentRequest s) {
+    public ResponseEntity<Student> getStudentData(StudentRequest s) {
         String email = s.getEmail();
         String password = s.getPassword();
         Optional<Student> student = student_repo.findByEmailAndPassword(email, password);
         
         if (student.isPresent()) {
             Student student1 = student.get();
-            StudentResponse response = studentResponseBuild(student1);
-            return ResponseEntity.ok(response);
+            return ResponseEntity.ok(student1);
         } else {
             return ResponseEntity.notFound().build();
         }

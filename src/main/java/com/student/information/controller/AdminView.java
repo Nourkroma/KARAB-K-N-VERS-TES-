@@ -28,13 +28,19 @@ public class AdminView {
     private Admin_service admin_service;
 
     @PostMapping("/newstudent")
-    public ResponseEntity<String> addStudent(@RequestBody  @Valid Student student) throws IOException {
+    public ResponseEntity<String> addStudent(@RequestBody  @Valid Student student) {
         return admin_service.addStudent(student);
     }
 
     @PostMapping("/addimage")
     public ResponseEntity<String> addImage(@RequestParam("image") MultipartFile image ,@RequestParam("email") String email) throws IOException {
-        // System.out.println("email : " + email);
+        System.out.println("email : " + email);
         return admin_service.addImage(image,email);
     }
+
+    // @PostMapping("/addfiles")
+    // public ResponseEntity<String> addFiles(@RequestParam("file") MultipartFile file ,@RequestParam("email") String email) throws IOException {
+    //     System.out.println("email : " + email);
+    //     return admin_service.addFiles(file,email);
+    // }
 }

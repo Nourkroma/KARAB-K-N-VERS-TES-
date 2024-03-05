@@ -25,7 +25,7 @@ public class Student_Entrance_controller {
     private Student_Entrance_service student_entrance_service;
 
     @PostMapping("/fulldata")
-    public ResponseEntity<StudentResponse> getStudentData(@RequestBody StudentRequest s) {
+    public ResponseEntity<Student> getStudentData(@RequestBody StudentRequest s) {
         return student_entrance_service.getStudentData(s);
     }
 
