@@ -77,7 +77,7 @@ public class Student_Entrance_service {
         response.setRegistration_date(student.getRegistration_date());
         response.setLast_session_date(student.getLast_session_date());
         response.setDuration_of_study(student.getDuration_of_study());
-        response.setLanguage_of_the_study(student.getLanguage_of_the_study());
+        response.setStudy_language(student.getStudy_language());
         response.setId(student.getId());
         response.setEmail(student.getEmail());
         response.setSecret(student.getSecret());

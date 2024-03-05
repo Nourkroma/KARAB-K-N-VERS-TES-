@@ -46,7 +46,7 @@ public class StudentResponse {
 
     private String duration_of_study;
 
-    private String Language_of_the_study;
+    private String study_language;
 
     private byte[] full_information;
 

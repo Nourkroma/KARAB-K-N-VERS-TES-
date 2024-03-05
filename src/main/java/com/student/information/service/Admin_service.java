@@ -36,6 +36,8 @@ public class Admin_service {
         if (s2.isPresent())
             return ResponseEntity.badRequest().body("Secret already exists");
 
+        // System.out.println(student.getLanguage_of_the_study());
+
         student_repo.save(student).getId();
         return ResponseEntity.ok("Student added successfully");
 

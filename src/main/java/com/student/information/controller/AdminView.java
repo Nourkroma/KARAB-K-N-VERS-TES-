@@ -33,6 +33,7 @@ public class AdminView {
 
     @PostMapping("/newstudent")
     public ResponseEntity<String> addStudent(@RequestBody @Valid Student student) {
+        System.out.println(student);
         return admin_service.addStudent(student);
     }
 
