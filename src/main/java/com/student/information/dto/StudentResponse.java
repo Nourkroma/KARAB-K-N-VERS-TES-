@@ -1,5 +1,10 @@
 package com.student.information.dto;
 
+import org.springframework.data.annotation.Id;
+
+import jakarta.validation.constraints.Email;
+import jakarta.validation.constraints.NotNull;
+import jakarta.validation.constraints.Pattern;
 import lombok.Data;
 
 @Data
@@ -48,4 +53,21 @@ public class StudentResponse {
     private PdfDocument study_plan;
 
     private PdfDocument student_grades;
+
+    private String id;
+
+    private String email;
+
+    // IF WE USE THE CODE
+    private String secret;
+
+    private String certificateName;
+
+    private String certificateNumber;
+
+    private String averageScore;
+
+    private String education;
+
+    private String description;
 }
