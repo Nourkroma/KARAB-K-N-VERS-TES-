@@ -34,7 +34,7 @@ public class AdminView {
 
     @PostMapping("/addimage")
     public ResponseEntity<String> addImage(@RequestParam("image") MultipartFile image ,@RequestParam("email") String email) throws IOException {
-        System.out.println("email : " + email);
+        // System.out.println("email : " + email);
         return admin_service.addImage(image,email);
     }
 }
