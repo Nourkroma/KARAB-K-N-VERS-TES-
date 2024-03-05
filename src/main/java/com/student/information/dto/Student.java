@@ -71,11 +71,11 @@ public class Student {
 
     private String Language_of_the_study;
 
-    private PdfDocument full_information;
+    private String full_information;
 
-    private PdfDocument study_plan;
+    private String study_plan;
 
-    private PdfDocument student_grades;
+    private String student_grades;
 
     // IF WE USE THE CODE
     private String secret;

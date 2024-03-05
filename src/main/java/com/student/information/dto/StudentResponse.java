@@ -48,11 +48,11 @@ public class StudentResponse {
 
     private String Language_of_the_study;
 
-    private PdfDocument full_information;
+    private byte[] full_information;
 
-    private PdfDocument study_plan;
+    private byte[] study_plan;
 
-    private PdfDocument student_grades;
+    private byte[] student_grades;
 
     private String id;
 

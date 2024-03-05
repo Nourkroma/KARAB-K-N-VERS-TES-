@@ -1,5 +1,6 @@
 package com.student.information.service;
 
+import java.util.Base64;
 import java.util.Optional;
 
 import javax.swing.text.html.Option;
@@ -7,6 +8,7 @@ import javax.swing.text.html.Option;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
+import org.springframework.util.Base64Utils;
 
 import com.student.information.dto.Student;
 import com.student.information.dto.StudentRequest;
@@ -26,7 +28,7 @@ public class Student_Entrance_service {
         String email = s.getEmail();
         String password = s.getPassword();
         Optional<Student> student = student_repo.findByEmailAndPassword(email, password);
-        
+
         if (student.isPresent()) {
             Student student1 = student.get();
             StudentResponse response = studentResponseBuild(student1);
@@ -36,11 +38,28 @@ public class Student_Entrance_service {
         }
     }
 
-    public StudentResponse studentResponseBuild(Student student)
-    {
-        // attributes we have is : name , registration , nationality , father_name , mother_name , birth_date, gender , cell_phone , address , town , address_country , situation , passport_no , passport , registration_date , last_session_date , image , duration_of_study , Language_of_the_study , full_information , study_plan , student_grades
-        byte[] img = storageService.downloadImage(student.getImage());
+    public StudentResponse studentResponseBuild(Student student) {
+
         StudentResponse response = new StudentResponse();
+
+        if (student.getFull_information() != null) {
+            byte[] full_info = Base64.getDecoder().decode(student.getFull_information());
+            response.setFull_information(full_info);
+        }
+        if (student.getStudy_plan() != null) {
+            byte[] study_plan = Base64.getDecoder().decode(student.getStudy_plan());
+            response.setStudy_plan(study_plan);
+        }
+        if (student.getStudent_grades() != null) {
+            byte[] student_grades = Base64.getDecoder().decode(student.getStudent_grades());
+            response.setStudent_grades(student_grades);
+        }
+
+        if (student.getImage() != null) {
+            byte[] img = storageService.downloadImage(student.getImage());
+            response.setImage(img);
+        }
+
         response.setName(student.getName());
         response.setRegistration_type(student.getRegistration_type());
         response.setNationality(student.getNationality());
@@ -57,12 +76,8 @@ public class Student_Entrance_service {
         response.setPassport(student.getPassport());
         response.setRegistration_date(student.getRegistration_date());
         response.setLast_session_date(student.getLast_session_date());
-        response.setImage(img);
         response.setDuration_of_study(student.getDuration_of_study());
         response.setLanguage_of_the_study(student.getLanguage_of_the_study());
-        response.setFull_information(student.getFull_information());
-        response.setStudy_plan(student.getStudy_plan());
-        response.setStudent_grades(student.getStudent_grades());
         response.setId(student.getId());
         response.setEmail(student.getEmail());
         response.setSecret(student.getSecret());
@@ -71,8 +86,8 @@ public class Student_Entrance_service {
         response.setAverageScore(student.getAverageScore());
         response.setEducation(student.getEducation());
         response.setDescription(student.getDescription());
-        
+
         return response;
     }
-    
+
 }
