@@ -36,6 +36,7 @@ public class DocumentVerification_service {
         codeResponse.setDescription(student.getDescription());
         codeResponse.setName(student.getName());
         codeResponse.setStudentId(student.getStudentId());
+        codeResponse.setImage(student.getImage());
         return codeResponse;
     }
 

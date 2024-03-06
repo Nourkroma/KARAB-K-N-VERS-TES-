@@ -18,6 +18,8 @@ public class CodeResponse {
     private String studentId;
 
     private String name;
+
+    private String image;
 }
 
-// add studentid , add name 
+// add studentid , add name
