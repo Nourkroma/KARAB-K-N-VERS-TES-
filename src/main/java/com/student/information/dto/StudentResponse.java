@@ -1,5 +1,6 @@
 package com.student.information.dto;
 
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.data.annotation.Id;
 
 import jakarta.validation.constraints.Email;
@@ -44,7 +45,7 @@ public class StudentResponse {
 
     private String studentId;
 
-    private byte[] image;
+    private String image;
 
     private String duration_of_study;
 

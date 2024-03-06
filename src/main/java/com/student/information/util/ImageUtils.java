@@ -17,7 +17,7 @@ public class ImageUtils {
         while (!deflater.finished()) {
             int size = deflater.deflate(tmp);
             outputStream.write(tmp, 0, size);
-        }
+        }   
         try {
             outputStream.close();
         } catch (Exception ignored) {

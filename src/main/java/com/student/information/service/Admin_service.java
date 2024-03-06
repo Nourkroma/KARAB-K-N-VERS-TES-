@@ -52,8 +52,8 @@ public class Admin_service {
         if (s.isEmpty())
             return ResponseEntity.badRequest().body("Student not found");
 
-        ImageData imageBytes = storageService.uploadImage(image);
-        s.get().setImage(imageBytes);
+        // ImageData imageBytes = storageService.uploadImage(image);
+        // s.get().setImage(imageBytes);
         student_repo.save(s.get());
 
         return ResponseEntity.ok("Image added successfully");

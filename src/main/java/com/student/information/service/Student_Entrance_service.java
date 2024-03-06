@@ -6,6 +6,7 @@ import java.util.Optional;
 import javax.swing.text.html.Option;
 
 import org.springframework.beans.factory.annotation.Autowired;
+import org.springframework.core.io.ByteArrayResource;
 import org.springframework.http.ResponseEntity;
 import org.springframework.stereotype.Service;
 import org.springframework.util.Base64Utils;
@@ -56,8 +57,10 @@ public class Student_Entrance_service {
         }
 
         if (student.getImage() != null) {
-            byte[] img = storageService.downloadImage(student.getImage());
-            response.setImage(img);
+            // byte[] img = storageService.downloadImage(student.getImage());
+            // ByteArrayResource resource = new ByteArrayResource(img);
+            // response.setImage(resource);
+            response.setImage(student.getImage());
         }
 
         response.setName(student.getName());
