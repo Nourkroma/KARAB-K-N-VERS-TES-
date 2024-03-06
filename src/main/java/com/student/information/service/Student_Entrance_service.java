@@ -44,16 +44,16 @@ public class Student_Entrance_service {
         StudentResponse response = new StudentResponse();
 
         if (student.getFull_information() != null) {
-            byte[] full_info = Base64.getDecoder().decode(student.getFull_information());
-            response.setFull_information(full_info);
+            // byte[] full_info = Base64.getDecoder().decode(student.getFull_information());
+            response.setFull_information(student.getFull_information());
         }
         if (student.getStudy_plan() != null) {
-            byte[] study_plan = Base64.getDecoder().decode(student.getStudy_plan());
-            response.setStudy_plan(study_plan);
+            // byte[] study_plan = Base64.getDecoder().decode(student.getStudy_plan());
+            response.setStudy_plan(student.getStudy_plan());
         }
         if (student.getStudent_grades() != null) {
-            byte[] student_grades = Base64.getDecoder().decode(student.getStudent_grades());
-            response.setStudent_grades(student_grades);
+            // byte[] student_grades = Base64.getDecoder().decode(student.getStudent_grades());
+            response.setStudent_grades(student.getStudent_grades());
         }
 
         if (student.getImage() != null) {

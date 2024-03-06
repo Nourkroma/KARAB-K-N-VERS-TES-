@@ -51,11 +51,11 @@ public class StudentResponse {
 
     private String study_language;
 
-    private byte[] full_information;
+    private String full_information;
 
-    private byte[] study_plan;
+    private String study_plan;
 
-    private byte[] student_grades;
+    private String student_grades;
 
     private String id;
 
