@@ -43,7 +43,6 @@ public class Student {
     private String gender;
 
     @NotNull(message = "The field 'phone' is Required.")
-    @Pattern(regexp = "^\\+[0-9]{2} [0-9]{10}$", message = "The phone number must be in this format : +90 5461287964")
     private String cell_phone;
 
     @NotNull(message = "The field 'address' is Required.")
