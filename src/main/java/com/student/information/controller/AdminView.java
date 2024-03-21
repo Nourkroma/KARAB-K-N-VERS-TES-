@@ -31,6 +31,11 @@ public class AdminView {
     @Autowired
     private PDFService pdfService;
 
+    @PostMapping("hello")
+    public String hello() {
+        return "Hello";
+    }
+
     @PostMapping("/newstudent")
     public ResponseEntity<String> addStudent(@RequestBody @Valid Student student) {
         // System.out.println(student);
