@@ -18,7 +18,7 @@ public class Student {
     @Email(message = "invalid email address")
     private String email;
 
-    @NotNull(message = "The field 'password' is Required.")
+
     private String password;
 
     @NotNull(message = "The field 'name' is Required.")
