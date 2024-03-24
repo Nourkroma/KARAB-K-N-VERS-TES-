@@ -18,7 +18,7 @@ public class Student {
     @Email(message = "invalid email address")
     private String email;
 
-    @Pattern(regexp = "^[a-zA-Z0-9*_#.]{3,20}$", message = "password must be between 3 and 20 characters long and can only contain letters and numbers")
+    @NotNull(message = "The field 'password' is Required.")
     private String password;
 
     @NotNull(message = "The field 'name' is Required.")
