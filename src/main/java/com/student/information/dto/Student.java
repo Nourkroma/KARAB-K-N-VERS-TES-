@@ -15,43 +15,41 @@ public class Student {
     @Id
     private String id;
 
-    @Email(message = "invalid email address")
+    
     private String email;
 
 
     private String password;
 
-    @NotNull(message = "The field 'name' is Required.")
+    
     private String name;
 
-    @NotNull(message = "The field 'registration_type' is Required.")
+    
     private String registration_type;
 
-    @NotNull(message = "The field 'nationality' is Required.")
+  
     private String nationality;
 
-    @NotNull(message = "The field 'father_name' is Required.")
+
     private String father_name;
 
-    @NotNull(message = "The field 'mother_name' is Required.")
+    
     private String mother_name;
 
-    @NotNull(message = "The field 'birth_date' is Required.")
     private String birth_date;
 
-    @NotNull(message = "The field 'gender' is Required.")
+   
     private String gender;
 
-    @NotNull(message = "The field 'phone' is Required.")
+    
     private String cell_phone;
 
-    @NotNull(message = "The field 'address' is Required.")
+  
     private String address;
 
-    @NotNull(message = "The field 'town' is Required.")
+   
     private String town;
 
-    @NotNull(message = "The field 'address_country' is Required.")
     private String address_country;
     
     private String situation;
